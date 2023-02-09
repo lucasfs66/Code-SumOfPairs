@@ -27,23 +27,22 @@ sum_pairs([10, 5, 2, 3, 7, 5],         10)
 
 function sumPairs(ints, s) {
     //Make a empty array for the results
-    let result = []
+    
     //Make a array for all the correct answers
     let allAnswers = []
     //Make a loop to look for all the two number that are correct
-    for(let i = 0; i < ints.length; i++){
-        for(let g = 1; g < ints.length && g > i; g++){
+    for(let i = ints.length - 1; i >= 0; i--){
+        for(let g = i - 1; g >= 0; g--){
             //if stagment for all check the add
             if(ints[i] + ints[g] === s){
-                allAnswers.push(ints[i])
-                allAnswers.push(ints[g])
+                allAnswers.push([ints[g], ints[i]])
             }
         }
     }
     //make a if stagment for get the awswers for with the smallest index.
+    let result = allAnswers[allAnswers.length - 1]
 
-
-    console.log(allAnswers)
+    console.log(result)
 
   }
 
